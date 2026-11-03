@@ -1,0 +1,8 @@
+discord.py==2.7.1
+groq==1.7.0
+pydantic==2.14.1
+python-dotenv==1.2.4
+libsql-client==0.3.1
+tzdata==2026.6
+aiohttp>=3.9
+pywebview>=5.0

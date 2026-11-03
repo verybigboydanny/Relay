@@ -1,0 +1,120 @@
+{
+  "bot": {
+    "name": "Relay",
+    "prefix": "r!",
+    "slash_commands": true,
+    "sync_commands_on_start": true,
+    "mention_trigger": true
+  },
+  "groq": {
+    "model": "openai/gpt-oss-120b",
+    "temperature": 0.1,
+    "max_tokens": 6000,
+    "timeout_seconds": 45,
+    "max_retries": 2,
+    "json_mode": "json_object",
+    "reasoning_effort": "medium"
+  },
+  "storage": {
+    "mode": "local",
+    "local": {
+      "directory": "data"
+    },
+    "turso": {
+      "enabled": false
+    }
+  },
+  "timezone": "UTC",
+  "scheduler": {
+    "poll_seconds": 5,
+    "batch_size": 10,
+    "max_concurrent": 4,
+    "max_tasks_per_guild": 100,
+    "retry_limit": 3,
+    "backoff_seconds": 30,
+    "stale_claim_seconds": 300,
+    "late_grace_seconds": 21600,
+    "min_recurring_seconds": 300,
+    "max_consecutive_failures": 5
+  },
+  "confirmation": {
+    "ttl_seconds": 300,
+    "direct": "risky",
+    "scheduled": "always",
+    "recurring": "always",
+    "slash_requires_confirmation": true,
+    "max_pending_per_user": 5
+  },
+  "audit": {
+    "enabled": true,
+    "fail_closed": true,
+    "retention_days": 0,
+    "page_size": 10,
+    "export_max_rows": 5000
+  },
+  "limits": {
+    "user_per_minute": 12,
+    "guild_per_minute": 60,
+    "ai_per_minute_per_guild": 30,
+    "history_searches_per_minute": 6,
+    "concurrent_plans_per_guild": 3,
+    "actions_per_plan": 30,
+    "max_request_chars": 1500,
+    "max_bulk_targets": 50,
+    "max_history_fetch": 500
+  },
+  "context": {
+    "ttl_minutes": 30,
+    "max_turns": 12
+  },
+  "memory": {
+    "max_per_user": 50,
+    "max_per_guild": 200,
+    "max_chars": 400,
+    "event_retention_days": 90,
+    "confirmation_retention_days": 7,
+    "snapshot_retention_days": 30,
+    "task_retention_days": 30
+  },
+  "personality": {
+    "tone": "warm, sharp, confident, a little witty",
+    "max_sentences": 5,
+    "extra": ""
+  },
+  "policy": {
+    "administrator_is_admin": true,
+    "groups": {
+      "admin": [
+        "*"
+      ],
+      "moderator": [
+        "@read",
+        "warn_member",
+        "remove_warning",
+        "timeout_member",
+        "untimeout_member",
+        "kick_member",
+        "delete_message",
+        "send_message",
+        "remind",
+        "set_nickname",
+        "query_warnings",
+        "moderation_summary"
+      ],
+      "trusted": [
+        "remind",
+        "recall",
+        "remember",
+        "forget",
+        "list_tasks"
+      ],
+      "restricted": []
+    }
+  },
+  "moderation": {
+    "max_timeout_days": 28,
+    "dm_on_warn": true,
+    "escalation": []
+  },
+  "guilds": {}
+}
